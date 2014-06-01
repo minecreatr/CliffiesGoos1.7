@@ -3,13 +3,13 @@ package com.minecreatr.cliffsgoos.src;
 
 import net.minecraft.block.Block;
 
-public class StepSound extends Block.SoundType
+public class GooStep extends Block.SoundType
 {
     public final String stepSoundName;
     public final float stepSoundVolume;
     public final float stepSoundPitch;
 
-    public StepSound(String par1Str, float par2, float par3)
+    public GooStep(String par1Str, float par2, float par3)
     {
         super(par1Str, par2, par3);
         this.stepSoundName = par1Str;
@@ -35,18 +35,12 @@ public class StepSound extends Block.SoundType
         return this.stepSoundName;
     }
 
-    /**
-     * Used when a entity walks over, or otherwise interacts with the block.
-     */
-    public String getStepSound()
+    public String getStepResourcePath()
     {
         return this.stepSoundName;
     }
 
-    /**
-     * Used when a player places a block.
-     */
-    public String getPlaceSound()
+    public String func_150496_b()
     {
         return this.getBreakSound();
     }

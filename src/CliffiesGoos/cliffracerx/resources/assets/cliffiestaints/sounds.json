@@ -8,7 +8,7 @@
       "splurg4"
     ]
   },
-
+ 
   "splut": {
       "category": "master",
       "sounds": [
@@ -18,7 +18,7 @@
         "splut4"
       ]
     },
-
+ 
     "thunk": {
         "category": "master",
         "sounds": [
@@ -28,7 +28,7 @@
           "thunk4"
         ]
       },
-
+ 
       "woosh": {
           "category": "master",
           "sounds": [
@@ -38,7 +38,7 @@
             "woosh4"
           ]
         },
-
+ 
         "zap": {
             "category": "master",
             "sounds": [
@@ -47,6 +47,6 @@
               "zap3",
               "zap4"
             ]
-          }
+        }
+ 
 }
-
