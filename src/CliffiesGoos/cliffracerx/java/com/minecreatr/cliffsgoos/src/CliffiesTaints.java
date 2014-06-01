@@ -31,11 +31,11 @@ import java.util.List;
 public class CliffiesTaints
 {
     public final static CreativeTabs tab = new TaintedTab("taintedTab");
-    public final static StepSound soundSplutFootstep = new StepSound("cliffiestaints:splut", 1, 1);
-    public final static StepSound soundThunkFootstep = new StepSound("cliffiestaints:thunk", 1, 1);
-    public final static StepSound soundWooshFootstep = new StepSound("cliffiestaints:woosh", 1, 1);
-    public final static StepSound soundZapFootstep = new StepSound("cliffiestaints:zap", 1, 1);
-    public final static StepSound soundSplurgFootstep = new StepSound("cliffiestaints:splurg", 1, 1);
+    public final static GooStep soundSplutFootstep = new GooStep("cliffiestaints:splut", 1, 1);
+    public final static GooStep soundThunkFootstep = new GooStep("cliffiestaints:thunk", 1, 1);
+    public final static GooStep soundWooshFootstep = new GooStep("cliffiestaints:woosh", 1, 1);
+    public final static GooStep soundZapFootstep = new GooStep("cliffiestaints:zap", 1, 1);
+    public final static GooStep soundSplurgFootstep = new GooStep("cliffiestaints:splurg", 1, 1);
     public static ItemArmor.ArmorMaterial gasMask = EnumHelper.addArmorMaterial("cliffiesGasMask", 500, new int[]{2, 6, 5, 2}, 9);
     public boolean worldGenEnabled = false;
     public boolean expensiveAntiTaint = false;

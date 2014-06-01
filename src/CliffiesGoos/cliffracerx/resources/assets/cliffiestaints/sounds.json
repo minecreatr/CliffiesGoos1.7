@@ -1,52 +1,52 @@
 {
   "splurg": {
-    "category": "step",
+    "category": "master",
     "sounds": [
       "splurg1",
       "splurg2",
       "splurg3",
       "splurg4"
     ]
-  }
+  },
 
   "splut": {
-      "category": "step",
+      "category": "master",
       "sounds": [
         "splut1",
         "splut2",
         "splut3",
         "splut4"
       ]
-    }
+    },
 
     "thunk": {
-        "category": "step",
+        "category": "master",
         "sounds": [
           "thunk1",
           "thunk2",
           "thunk3",
           "thunk4"
         ]
-      }
+      },
 
       "woosh": {
-          "category": "step",
+          "category": "master",
           "sounds": [
             "woosh1",
             "woosh2",
             "woosh3",
             "woosh4"
           ]
+        },
+
+        "zap": {
+            "category": "master",
+            "sounds": [
+              "zap1",
+              "zap2",
+              "zap3",
+              "zap4"
+            ]
         }
 
-        "splurg": {
-            "category": "step",
-            "sounds": [
-              "woosh1",
-              "woosh2",
-              "woosh3",
-              "woosh4"
-            ]
-          }
 }
-
