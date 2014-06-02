@@ -1,0 +1,42 @@
+{
+  "clang": {
+    "category": "master",
+    "sounds": [
+      "clang1",
+      "clang2",
+      "clang3",
+      "clang4"
+    ]
+  },
+ 
+  "laser": {
+      "category": "master",
+      "sounds": [
+        "laser1",
+        "laser2",
+        "laser3",
+        "laser4"
+      ]
+    },
+ 
+    "swoosh": {
+        "category": "master",
+        "sounds": [
+          "swoosh1",
+          "swoosh2",
+          "swoosh3",
+          "swoosh4"
+        ]
+      },
+ 
+      "woosh": {
+          "category": "master",
+          "sounds": [
+            "woosh1",
+            "woosh2",
+            "woosh3",
+            "woosh4"
+          ]
+        }
+ 
+}
