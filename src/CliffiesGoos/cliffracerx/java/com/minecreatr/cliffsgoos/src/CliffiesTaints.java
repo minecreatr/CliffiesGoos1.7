@@ -26,8 +26,8 @@ import net.minecraftforge.common.util.EnumHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-@Mod(modid = "CliffiesTaints", name = "Cliffie's Tainted Crap",
-        version = "Alpha 0.09a")
+@Mod(modid = "CliffiesTaints", name = "Cliffie's Goos",
+        version = "1.7.2-1.0")
 public class CliffiesTaints
 {
     public final static CreativeTabs tab = new TaintedTab("taintedTab");
@@ -536,7 +536,15 @@ public class CliffiesTaints
         GameRegistry.registerBlock(bSlowGoo, "bSlowGoo");
         LanguageRegistry.addName(pSlowGoo, "Purple Slow goo");
         GameRegistry.registerBlock(pSlowGoo, "pSlowGoo");
-        //Event handler
+        //Register gas masks
+        GameRegistry.registerItem(rGasMask, "rGasMask");
+        GameRegistry.registerItem(oGasMask, "oGasMask");
+        GameRegistry.registerItem(yGasMask, "yGasMask");
+        GameRegistry.registerItem(lGasMask, "lGasMask");
+        GameRegistry.registerItem(gGasMask, "gGasMask");
+        GameRegistry.registerItem(cGasMask, "cGasMask");
+        GameRegistry.registerItem(bGasMask, "bGasMask");
+        GameRegistry.registerItem(pGasMask, "pGasMask");
         //Turn on the world gen if it's enabled.
         if(worldGenEnabled)
             GameRegistry.registerWorldGenerator(new GenerateGoo(), 10);
