@@ -15,8 +15,8 @@ public class NormalTaint extends Block
     private String tex;
     
     /**
-     * A basic taint block.
-     * Designed only to annoy the crap out of you, will change surrounding blocks into it if the block isn't bedrock or a anti-taint wall.
+     * A basic taint com.minecreatr.cliffieswars.block.
+     * Designed only to annoy the crap out of you, will change surrounding blocks into it if the com.minecreatr.cliffieswars.block isn't bedrock or a anti-taint wall.
      * This is a Lv. 0 / annoyance taint.  If THIS scares you, wait until you see the others!
      * @param id
      * @param material

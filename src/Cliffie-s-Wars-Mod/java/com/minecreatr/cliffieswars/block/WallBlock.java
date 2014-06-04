@@ -1,4 +1,4 @@
-
+package com.minecreatr.cliffieswars.block;
 
 import com.minecreatr.cliffsgoos.src.NormalBlock;
 import net.minecraft.block.material.Material;

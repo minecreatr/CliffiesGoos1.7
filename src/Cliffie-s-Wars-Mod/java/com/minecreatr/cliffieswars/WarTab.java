@@ -1,4 +1,6 @@
+package com.minecreatr.cliffieswars;
 
+import com.minecreatr.cliffieswars.CliffiesWars;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 

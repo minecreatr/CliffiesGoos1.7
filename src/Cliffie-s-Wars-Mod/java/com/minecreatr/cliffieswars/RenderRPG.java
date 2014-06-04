@@ -1,7 +1,8 @@
+package com.minecreatr.cliffieswars;
 
+import com.minecreatr.cliffieswars.entity.RPGEntity;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.entity.Entity;
@@ -9,12 +10,12 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
 @SideOnly(Side.CLIENT)
-public class RenderLaser
+public class RenderRPG
         extends Render
 {
     private static ResourceLocation arrowTextures;
 
-    public void renderArrow(LaserEntity par1EntityArrow, double par2, double par4, double par6, float par8, float par9)
+    public void renderArrow(RPGEntity par1EntityArrow, double par2, double par4, double par6, float par8, float par9)
     {
         bindEntityTexture(par1EntityArrow);
         GL11.glPushMatrix();
@@ -33,7 +34,7 @@ public class RenderLaser
         float f9 = (10 + b0 * 10) / 32.0F;
         float f10 = 0.05625F;
         GL11.glEnable(32826);
-        arrowTextures = new ResourceLocation("cliffieswarsmod:textures/entities/" + par1EntityArrow.getColor() + "Laser.png");
+        arrowTextures = new ResourceLocation("cliffieswarsmod:textures/entities/" + par1EntityArrow.getColor() + "rocket.png");
         GL11.glRotatef(45.0F, 1.0F, 0.0F, 0.0F);
         GL11.glScalef(f10, f10, f10);
         GL11.glTranslatef(-4.0F, 0.0F, 0.0F);
@@ -64,25 +65,21 @@ public class RenderLaser
         }
         GL11.glDisable(32826);
         GL11.glPopMatrix();
-        int i = 15728880;
-        int j = i % 65536;
-        int k = i / 65536;
-        OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, j / 1.0F, k / 1.0F);
     }
 
-    protected ResourceLocation getArrowTextures(LaserEntity par1EntityArrow)
+    protected ResourceLocation getArrowTextures(RPGEntity par1EntityArrow)
     {
-        arrowTextures = new ResourceLocation("cliffieswarsmod:textures/entities/" + par1EntityArrow.getColor() + "Laser.png");
+        arrowTextures = new ResourceLocation("cliffieswarsmod:textures/entities/" + par1EntityArrow.getColor() + "rocket.png");
         return arrowTextures;
     }
 
     protected ResourceLocation getEntityTexture(Entity par1Entity)
     {
-        return getArrowTextures((LaserEntity)par1Entity);
+        return getArrowTextures((RPGEntity)par1Entity);
     }
 
     public void doRender(Entity par1Entity, double par2, double par4, double par6, float par8, float par9)
     {
-        renderArrow((LaserEntity)par1Entity, par2, par4, par6, par8, par9);
+        renderArrow((RPGEntity)par1Entity, par2, par4, par6, par8, par9);
     }
 }

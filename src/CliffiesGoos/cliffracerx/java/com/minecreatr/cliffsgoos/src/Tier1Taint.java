@@ -20,7 +20,7 @@ public class Tier1Taint extends Block
     private String tex;
     
     /**
-     * A still fairly basic taint block.
+     * A still fairly basic taint com.minecreatr.cliffieswars.block.
      * Designed to annoy you and possibly kill you, this spreads onto nearby blocks AND poisions you sometimes.
      * This is a Lv. 1 / dangerous taint.
      * @param id
@@ -71,7 +71,7 @@ public class Tier1Taint extends Block
     }
     
     /**
-     * Triggered whenever an entity collides with this block (enters into the block). Args: world, x, y, z, entity
+     * Triggered whenever an entity collides with this com.minecreatr.cliffieswars.block (enters into the com.minecreatr.cliffieswars.block). Args: world, x, y, z, entity
      */
     public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)
     {

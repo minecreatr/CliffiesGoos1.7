@@ -1,3 +1,6 @@
+package com.minecreatr.cliffieswars.item;
+
+import com.minecreatr.cliffieswars.CliffiesWars;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;

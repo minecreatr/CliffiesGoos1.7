@@ -55,8 +55,8 @@ public class Tier3Taint extends Tier2Taint
     }
     
     /**
-     * Is this block (a) opaque and (b) a full 1m cube?  This determines whether or not to render the shared face of two
-     * adjacent blocks and also whether the player can attach torches, redstone wire, etc to this block.
+     * Is this com.minecreatr.cliffieswars.block (a) opaque and (b) a full 1m cube?  This determines whether or not to render the shared face of two
+     * adjacent blocks and also whether the player can attach torches, redstone wire, etc to this com.minecreatr.cliffieswars.block.
      */
     public boolean isOpaqueCube()
     {
@@ -105,7 +105,7 @@ public class Tier3Taint extends Tier2Taint
     }
     
     /**
-     * Triggered whenever an entity collides with this block (enters into the block). Args: world, x, y, z, entity
+     * Triggered whenever an entity collides with this com.minecreatr.cliffieswars.block (enters into the com.minecreatr.cliffieswars.block). Args: world, x, y, z, entity
      */
     public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)
     {

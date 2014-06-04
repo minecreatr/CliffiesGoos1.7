@@ -1,4 +1,7 @@
+package com.minecreatr.cliffieswars;
 
+import com.minecreatr.cliffieswars.entity.LaserEntity;
+import com.minecreatr.cliffieswars.entity.RPGEntity;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

@@ -1,7 +1,12 @@
+package com.minecreatr.cliffieswars;
 
+import com.minecreatr.cliffieswars.block.FakeTurf;
+import com.minecreatr.cliffieswars.block.NukeBlock;
+import com.minecreatr.cliffieswars.block.WallBlock;
+import com.minecreatr.cliffieswars.entity.LaserEntity;
+import com.minecreatr.cliffieswars.entity.NukeEntity;
+import com.minecreatr.cliffieswars.entity.RPGEntity;
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLInterModComms;
@@ -12,6 +17,10 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import com.minecreatr.cliffieswars.item.BatteryItem;
+import com.minecreatr.cliffieswars.item.HandheldDeathray;
+import com.minecreatr.cliffieswars.item.HandheldRocketLauncher;
+import com.minecreatr.cliffieswars.item.RocketItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -20,7 +29,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.common.config.Property;
+import com.minecreatr.cliffieswars.tile.FakeBlockTileEntity;
 
 @Mod(modid="CliffiesWarsMod", name="Cliffie's War mod", version="Alpha 0.01a")
 public class CliffiesWars
@@ -66,6 +75,7 @@ public class CliffiesWars
     public static Block bWall;
     public static Block pWall;
     public static Block fakeTurf;
+    public static Block nukeBlock;
     public static Item battery;
     public static Item rDeathray;
     public static Item oDeathray;
@@ -86,7 +96,7 @@ public class CliffiesWars
     public static Item rocket;
     @Mod.Instance("WarsMod")
     public static CliffiesWars instance = new CliffiesWars();
-    @SidedProxy(clientSide="ClientProxy", serverSide="CommonProxy")
+    @SidedProxy(clientSide="com.minecreatr.cliffieswars.ClientProxy", serverSide="com.minecreatr.cliffieswars.CommonProxy")
     public static CommonProxy proxy;
 
     @Mod.EventHandler
@@ -97,6 +107,8 @@ public class CliffiesWars
         EntityRegistry.registerModEntity(LaserEntity.class, "EntityLaserOfWars", 0, this, 64, 1, true);
 
         EntityRegistry.registerModEntity(RPGEntity.class, "EntityRPGOfWars", 1, this, 64, 1, true);
+
+        EntityRegistry.registerModEntity(NukeEntity.class, "nukeEntity", 2, this, 64, 1, true);
 
 
         Configuration config = new Configuration(event.getSuggestedConfigurationFile());
@@ -200,6 +212,11 @@ public class CliffiesWars
 
         LanguageRegistry.addName(fakeTurf, "Fake turf");
         GameRegistry.registerBlock(fakeTurf, "fakeTurf");
+        nukeBlock = new NukeBlock();
+
+
+        LanguageRegistry.addName(nukeBlock, "Nuke");
+        GameRegistry.registerBlock(nukeBlock, "nukeBlock");
 
         battery = new BatteryItem(batteryID, "emptyBattery").setUnlocalizedName("emptyBat");
         GameRegistry.registerItem(battery, "emptyBat");
@@ -255,6 +272,7 @@ public class CliffiesWars
         rocket = new RocketItem(rocketID, "rocket").setUnlocalizedName("RPGAmmo");
         GameRegistry.registerItem(rocket, "RPGAmmo");
         LanguageRegistry.addName(rocket, "RPG ammo");
+        GameRegistry.registerTileEntity(FakeBlockTileEntity.class, "fakeBlockTileEntity");
 
         GameRegistry.addRecipe(new ItemStack(rDeathray, 1), new Object[] { "#$", Character.valueOf('$'), battery, Character.valueOf('#'), rWall });
         GameRegistry.addRecipe(new ItemStack(oDeathray, 1), new Object[] { "#$", Character.valueOf('$'), battery, Character.valueOf('#'), oWall });

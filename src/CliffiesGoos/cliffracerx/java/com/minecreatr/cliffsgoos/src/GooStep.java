@@ -28,7 +28,7 @@ public class GooStep extends Block.SoundType
     }
 
     /**
-     * Used when a block breaks, EXA: Player break, Shep eating grass, etc..
+     * Used when a com.minecreatr.cliffieswars.block breaks, EXA: Player break, Shep eating grass, etc..
      */
     public String getBreakSound()
     {

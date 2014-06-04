@@ -1,3 +1,4 @@
+package com.minecreatr.cliffieswars;
 
 public class CommonProxy
 {

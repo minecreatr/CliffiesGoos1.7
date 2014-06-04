@@ -12,8 +12,8 @@ public class TaintedTab extends CreativeTabs
         super(label);
     }
     
-    // This sets the item/block seen as the creative tab's icon. :D
-    // We set it to our custom block.
+    // This sets the com.minecreatr.cliffieswars.item/com.minecreatr.cliffieswars.block seen as the creative tab's icon. :D
+    // We set it to our custom com.minecreatr.cliffieswars.block.
     @Override
     public Item getTabIconItem()
     {

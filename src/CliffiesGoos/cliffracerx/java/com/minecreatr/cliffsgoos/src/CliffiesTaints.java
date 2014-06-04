@@ -336,6 +336,8 @@ public class CliffiesTaints
             Material.ground, "pSlowGoo", 0.88f).setHardness(0.75F)
             .setStepSound(soundSplutFootstep)
             .setBlockName("pSlowGoo").setCreativeTab(tab);
+    public final static Block antiGoo = new AntiGoo(Material.ground, "gTaint").setHardness(0.75F).setStepSound(soundSplurgFootstep)
+            .setBlockName("antiGoo").setCreativeTab(tab);
     public final static Item rGasMask = new CustomArmor(0, 0, "rMask", gasMask, rMaskI);
     public final static Item oGasMask = new CustomArmor(0, 0, "oMask", gasMask, oMaskI);
     public final static Item yGasMask = new CustomArmor(0, 0, "yMask", gasMask, yMaskI);
@@ -536,6 +538,9 @@ public class CliffiesTaints
         GameRegistry.registerBlock(bSlowGoo, "bSlowGoo");
         LanguageRegistry.addName(pSlowGoo, "Purple Slow goo");
         GameRegistry.registerBlock(pSlowGoo, "pSlowGoo");
+
+        GameRegistry.registerBlock(antiGoo, "antiGoo");
+        LanguageRegistry.addName(antiGoo, "Goo Remover (WIP)");
         //Register gas masks
         GameRegistry.registerItem(rGasMask, "rGasMask");
         GameRegistry.registerItem(oGasMask, "oGasMask");

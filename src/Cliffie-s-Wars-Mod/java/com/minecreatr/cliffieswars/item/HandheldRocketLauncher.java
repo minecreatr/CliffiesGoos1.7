@@ -1,11 +1,11 @@
+package com.minecreatr.cliffieswars.item;
 
+import com.minecreatr.cliffieswars.CliffiesWars;
+import com.minecreatr.cliffieswars.entity.RPGEntity;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import java.util.Random;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.entity.player.PlayerCapabilities;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
