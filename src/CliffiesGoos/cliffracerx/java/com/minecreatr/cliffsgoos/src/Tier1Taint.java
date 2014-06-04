@@ -71,7 +71,7 @@ public class Tier1Taint extends Block
     }
     
     /**
-     * Triggered whenever an entity collides with this com.minecreatr.cliffieswars.block (enters into the com.minecreatr.cliffieswars.block). Args: world, x, y, z, entity
+     * Triggered whenever an com.minecreatr.cliffieswars.com.minecreatr.cliffieswars.com.minecreatr.cliffieswars.entity collides with this com.minecreatr.cliffieswars.block (enters into the com.minecreatr.cliffieswars.block). Args: world, x, y, z, com.minecreatr.cliffieswars.com.minecreatr.cliffieswars.com.minecreatr.cliffieswars.entity
      */
     public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)
     {

@@ -1,13 +1,9 @@
 package com.minecreatr.cliffieswars.entity;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockObsidian;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.ChatComponentText;
-import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
 /**
