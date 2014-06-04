@@ -21,10 +21,11 @@ Anti taint walls: Derpy sounding walls to keep out tier 0/1 taint.
 
 Anti taint wall: Keeps out goos.
 
-Compiling: Stick the cliffracerx and assets folder into your mcp/com.minecreatr.cliffsgoos.src/minecraft/ and you should be good.  For MC 1.6.4, GRADLE NOT SUPPORTED.
+Compiling: (TODO)
 
 Credits:
 
-* Me for the derpy sound effects
-* Me for the textures
+* CliffracerX for the derpy sound effects
+* CliffracerX for the textures
 * Mojang for the basic idea for the spreading code and such
+* minecreatr for the 1.7 update
