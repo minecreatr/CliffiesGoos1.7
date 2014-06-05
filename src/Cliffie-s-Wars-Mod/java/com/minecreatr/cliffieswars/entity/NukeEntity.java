@@ -1,6 +1,8 @@
 package com.minecreatr.cliffieswars.entity;
 
+import com.minecreatr.cliffieswars.explode.NukeThread;
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.entity.RenderTNTPrimed;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.init.Blocks;
@@ -22,24 +24,13 @@ public class NukeEntity extends EntityTNTPrimed{
 
     private void explode(){
         System.out.println("Beginning Nuking");
-        for (int x = -getRadius(); x <= getRadius(); x++) {
-            for (int y = -getRadius(); y <= getRadius(); y++) {
-                for (int z = -getRadius(); z <= getRadius(); z++){
-                    Block block = worldObj.getBlock(x, y, z);
-                    if (block != Blocks.bedrock && block !=Blocks.air){
-                        System.out.println(x+" "+y+" "+z);
-                        worldObj.setBlock((int) (x+posX), (int) (y+posY), (int) (z+posZ), Blocks.air);
-                    }
-
-                }
-            }
-         }
+        new NukeThread(worldObj, posX, posY, posZ, getRadius()).start();
         System.out.println("Ending Nuking");
 
     }
 
     public int getRadius(){
-        return 100;
+        return 50;
     }
 
     @Override

@@ -48,9 +48,7 @@ public class FakeTurf
                 FakeBlockTileEntity entity = (FakeBlockTileEntity) world.getTileEntity(x, y, z);
                 entity.setId(Item.getIdFromItem(item));
                 world.setBlockMetadataWithNotify(x, y, z, item.getDamage(player.getCurrentEquippedItem()), 1);
-                player.addChatMessage(new ChatComponentText(""+item.getDamage(player.getCurrentEquippedItem())));
                 world.markBlockForUpdate(x, y, z);
-                player.addChatMessage(new ChatComponentText("It is: "+Item.getIdFromItem(item)));
                 return true;
             }
         }

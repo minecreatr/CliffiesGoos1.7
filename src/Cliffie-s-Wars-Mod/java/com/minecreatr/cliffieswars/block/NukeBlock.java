@@ -3,7 +3,9 @@ package com.minecreatr.cliffieswars.block;
 import com.minecreatr.cliffieswars.CliffiesWars;
 import com.minecreatr.cliffieswars.entity.NukeEntity;
 import net.minecraft.block.BlockTNT;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.util.IIcon;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
@@ -12,9 +14,33 @@ import net.minecraft.world.World;
  */
 public class NukeBlock extends BlockTNT{
 
+    private IIcon side;
+    private IIcon top;
+    private IIcon bottom;
+
     public NukeBlock(){
         super();
         this.setCreativeTab(CliffiesWars.tab);
+    }
+
+    @Override
+    public void registerBlockIcons(IIconRegister register){
+        side = register.registerIcon("cliffieswarsmod:Nuke_Side");
+        top = register.registerIcon("cliffieswarsmod:Nuke_Top");
+        bottom = register.registerIcon("cliffieswarsmod:Nuke_Bottom");
+    }
+
+    @Override
+    public IIcon getIcon(int side, int meta){
+        if (side==1){
+            return this.top;
+        }
+        else if (side==0){
+            return this.bottom;
+        }
+        else {
+            return this.side;
+        }
     }
 
     @Override
