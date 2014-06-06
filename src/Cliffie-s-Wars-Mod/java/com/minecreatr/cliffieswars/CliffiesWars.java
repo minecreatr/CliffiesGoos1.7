@@ -6,6 +6,7 @@ import com.minecreatr.cliffieswars.block.WallBlock;
 import com.minecreatr.cliffieswars.entity.LaserEntity;
 import com.minecreatr.cliffieswars.entity.NukeEntity;
 import com.minecreatr.cliffieswars.entity.RPGEntity;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -28,6 +29,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import com.minecreatr.cliffieswars.tile.FakeBlockTileEntity;
 
@@ -103,6 +105,10 @@ public class CliffiesWars
     public void preInit(FMLPreInitializationEvent event)
     {
         FMLInterModComms.sendMessage("WarsMod", "donateUrl", "http://cliffracerx.github.io/Cliffie-s-Wars-Mod/donate.html");
+
+        //MinecraftForge.EVENT_BUS.register(new EventHooks());
+
+        FMLCommonHandler.instance().bus().register(new EventHooks());
 
         EntityRegistry.registerModEntity(LaserEntity.class, "EntityLaserOfWars", 0, this, 64, 1, true);
 

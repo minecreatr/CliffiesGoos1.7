@@ -76,4 +76,9 @@ public class FakeTurf
     public TileEntity createTileEntity(World world, int meta){
         return new FakeBlockTileEntity();
     }
+
+//    @Override
+//    public boolean canCollideCheck(int meta, boolean boat){
+//        return false;
+//    }
 }
