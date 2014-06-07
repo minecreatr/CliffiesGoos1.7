@@ -15,15 +15,15 @@ public abstract class Explosion {
     protected int power;
     protected int radius;
     protected Random random;
-    public int curX = 0;
-    public int curY = 0;
-    public int curZ = 0;
     protected boolean hasExploded =false;
+    protected int x;
+    protected int y;
+    protected int z;
 
     public abstract void progress();
 
     public int getBlocksPerTick(){
-        return 64;
+        return 1400;
     }
 
     public boolean hasExploded(){

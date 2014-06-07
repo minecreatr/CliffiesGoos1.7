@@ -26,51 +26,88 @@ public class NukeExplosion extends Explosion{
         this.entity = entity;
         this.random = new Random();
         this.radius = MathHelper.getRadiusFromPower(power);
+        this.x=-radius;
+        this.y=-radius;
+        this.z=-radius;
     }
 
-    public void progress(){
-        int bpt = this.getBlocksPerTick();
-        int bc = 0;
-        int x;
-        int y;
-        int z;
-        if (this.curX!=0||this.curY!=0||this.curZ!=0){
-            x=curX;
-            y=curY;
-            z=curZ;
-        }
-        else {
-            x=-radius;
-            y=-radius;
-            z=-radius;
-        }
-        out:
-        for (;x <= radius; x++) {
-            for (;y <= radius; y++) {
-                for (;z <= radius; z++){
-                    if (bc>=bpt){
-                        saveData(x, y, z);
-                        break out;
-                    }
-                    int absDistance = MathHelper.getDistance(x, y, z);
-                    Block block = worldObj.getBlock(x, y, z);
-                    int ran = random.nextInt(10);
-                    int minRes = power-absDistance-ran;
-                    if (block.getExplosionResistance(entity) <= minRes){
-                        worldObj.setBlock((int) (x+posX), (int) (y+posY), (int) (z+posZ), Blocks.air);
-                    }
-                    bc++;
-                }
+
+
+
+//    public void progress(){
+//        int bpt = this.getBlocksPerTick();
+//        int bc = 0;
+//        out:
+//        for (;x <= radius; x++) {
+//            for (;y <= radius; y++) {
+//                for (;z <= radius; z++){
+//                    if (bc>=bpt){
+//                        break out;
+//                    }
+//                    int absDistance = MathHelper.getDistance(x, y, z);
+//                    Block block = worldObj.getBlock((int)(x+posX), (int)(y+posY), (int)(z+posZ));
+//                    int ran = random.nextInt(10);
+//                    int minRes = power-(absDistance*2)-ran;
+//                    int tempX = (int)(x+posX);
+//                    int tempY = (int)(y+posY);
+//                    int tempZ = (int)(z+posZ);
+//
+//                    if (block.getExplosionResistance(entity) <= minRes){
+//                        worldObj.setBlock((int) (x+posX), (int) (y+posY), (int) (z+posZ), Blocks.air);
+//                    }
+//                    bc++;
+//                }
+//                z=-radius;
+//            }
+//            y=-radius;
+//        }
+//        if (x>=radius&&y>=radius&&z>=radius){
+//            this.hasExploded=true;
+//        }
+//        System.out.println("I'm Ticked!! >:(");
+//    }
+
+    public void progress()
+    {
+        int blocks = 0;
+        int blocksPerTick = this.getBlocksPerTick();
+        while(blocks<blocksPerTick)
+        {
+            if(x<=radius && y<=radius && z<=radius)
+            {
+                execute(x, y, z);
+                blocks++;
+                z++;
             }
-        }
-        if (x<=radius&&y<=radius&&z<=radius){
-            this.hasExploded=true;
+            else if(z>radius)
+            {
+                z = -radius;
+                y++;
+            }
+            else if(y>radius)
+            {
+                y = -radius;
+                x++;
+            }
+            else if(x>radius)
+            {
+                hasExploded = true;
+            }
+            else
+            {
+                //DIVIDE BY CHEESE
+            }
+
         }
     }
 
-    private void saveData(int x, int y, int z){
-        this.curX=x;
-        this.curY=y;
-        this.curZ=z;
+    private void execute(int x, int y, int z){
+        int absDistance = MathHelper.getDistance(x, y, z);
+        Block block = worldObj.getBlock((int)(x+posX), (int)(y+posY), (int)(z+posZ));
+        int ran = random.nextInt(10);
+        int minRes = power-(absDistance*2)-ran;
+        if (block.getExplosionResistance(entity) <= minRes){
+            worldObj.setBlock((int) (x+posX), (int) (y+posY), (int) (z+posZ), Blocks.air);
+        }
     }
 }
