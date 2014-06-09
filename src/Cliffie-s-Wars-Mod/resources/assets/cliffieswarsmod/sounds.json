@@ -37,6 +37,13 @@
             "woosh3",
             "woosh4"
           ]
+        },
+
+        "nukeexplosion": {
+          "category": "master",
+          "sounds": [
+            "nukeexplosion"
+          ]
         }
  
 }

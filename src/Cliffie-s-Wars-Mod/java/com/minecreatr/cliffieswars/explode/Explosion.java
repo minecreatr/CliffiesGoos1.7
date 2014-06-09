@@ -23,7 +23,7 @@ public abstract class Explosion {
     public abstract void progress();
 
     public int getBlocksPerTick(){
-        return 1400;
+        return (this.power/50)*20000;
     }
 
     public boolean hasExploded(){

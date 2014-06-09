@@ -71,7 +71,7 @@ public class NukeExplosion extends Explosion{
     {
         int blocks = 0;
         int blocksPerTick = this.getBlocksPerTick();
-        while(blocks<blocksPerTick)
+        while(blocks<=blocksPerTick && !this.hasExploded)
         {
             if(x<=radius && y<=radius && z<=radius)
             {
@@ -91,7 +91,7 @@ public class NukeExplosion extends Explosion{
             }
             else if(x>radius)
             {
-                hasExploded = true;
+                this.hasExploded = true;
             }
             else
             {

@@ -4,6 +4,7 @@ import com.minecreatr.cliffieswars.explode.NukeExplosion;
 import com.minecreatr.cliffieswars.explode.NukeRegistry;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityTNTPrimed;
+import net.minecraft.server.management.ServerConfigurationManager;
 import net.minecraft.world.World;
 
 /**
@@ -23,6 +24,7 @@ public class NukeEntity extends EntityTNTPrimed{
     private void explode(){
         System.out.println("Beginning Nuking");
         NukeRegistry.registerExplosion(new NukeExplosion(worldObj, posX, posY, posZ, getPower() ,this));
+        worldObj.playSoundAtEntity(this, "cliffieswarsmod:nukeexplosion" ,1, 1);
     }
 
     public int getPower(){
